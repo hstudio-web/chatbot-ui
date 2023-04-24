@@ -13,14 +13,6 @@ const nextConfig = {
 
     return config;
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://api.openai.com/api/:path*'
-      }
-    ]
-  }
 };
 
 module.exports = nextConfig;
