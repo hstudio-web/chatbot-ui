@@ -9,6 +9,7 @@ RUN npm ci
 
 # ---- Build ----
 FROM dependencies AS build
+ENV OPENAI_API_HOST='https://api.openai.com'
 COPY . .
 RUN npm run build
 
