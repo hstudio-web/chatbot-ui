@@ -81,12 +81,7 @@ const Home = ({
     ({ signal }) => {
       if (!apiKey && !serverSideApiKeyIsSet) return null;
 
-      return getModels(
-        {
-          key: apiKey,
-        },
-        signal,
-      );
+      return "gpt-3.5-turbo";
     },
     { enabled: true, refetchOnMount: false },
   );

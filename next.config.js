@@ -17,7 +17,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://api.openai.com/:path*'
+        destination: 'https://api.openai.com/api/:path*'
       }
     ]
   }
