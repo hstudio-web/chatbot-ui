@@ -13,6 +13,15 @@ const nextConfig = {
 
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        // destination: 'https://www.aikitbox.com/api/:path*'
+        destination: 'http://localhost:8200/api/:path*'
+      }
+    ]
+  }
 };
 
 module.exports = nextConfig;

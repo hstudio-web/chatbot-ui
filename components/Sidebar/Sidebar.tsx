@@ -1,5 +1,5 @@
 import { IconFolderPlus, IconMistOff, IconPlus } from '@tabler/icons-react';
-import { ReactNode } from 'react';
+import {ReactNode, useContext} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -8,6 +8,7 @@ import {
 } from './components/OpenCloseButton';
 
 import Search from '../Search';
+import HomeContext from "@/pages/api/home/home.context";
 
 interface Props<T> {
   isOpen: boolean;
@@ -53,7 +54,12 @@ const Sidebar = <T,>({
   const removeHighlight = (e: any) => {
     e.target.style.background = 'none';
   };
-
+  const {
+    state: {
+      homeQrCode,
+    },
+    dispatch: homeDispatch,
+  } = useContext(HomeContext);
   return isOpen ? (
     <div>
       <div
@@ -101,6 +107,7 @@ const Sidebar = <T,>({
             >
               {itemComponent}
             </div>
+
           ) : (
             <div className="mt-8 select-none text-center text-white opacity-50">
               <IconMistOff className="mx-auto mb-3" />
@@ -110,6 +117,7 @@ const Sidebar = <T,>({
             </div>
           )}
         </div>
+          {side ==='right' && <img src={homeQrCode} width={'100%'} height={'100px'}/>}
         {footerComponent}
       </div>
 
