@@ -9,7 +9,7 @@ RUN npm ci
 
 # ---- Build ----
 FROM dependencies AS build
-ENV OPENAI_API_HOST='https://api.openai.com'
+ENV OPENAI_API_HOST='https://chat.51prompts.com'
 COPY . .
 RUN npm run build
 
